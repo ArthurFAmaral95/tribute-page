@@ -36,6 +36,7 @@ h2{
   font-family: 'Roboto', sans-serif;
   font-size: 2.5rem;
   text-transform: uppercase;
+  font-weight: bold;
 }
 
 /*###### Navigation #################################*/
@@ -68,19 +69,49 @@ nav ul a:hover{
 
 /*###### Songs Section #################################*/
 
+#songs{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 
+    "header header"
+    "main aside";
+}
+
+#songs h2{
+  grid-area: header;
+}
+
 #songs figure{
-  position: absolute;
-  right: 5%
+  margin-inline: auto;
 }
 
 /*###### Reference Section #################################*/
 
-#reference {
-  position: relative;
-  top: 350px;
-  padding-bottom: 3rem;
+#reference{
+  padding-bottom: 5%;
 }
 
-a{
-  transition: 1000ms;
+/*###### Layout for screen smaller than 768px #################################*/
+
+@media (max-width: 767px) {
+  h1{
+    font-size: 3.5rem;
+  }
+  
+  h2{
+    font-size: 2rem;
+  }
+
+  #overview ol{
+    padding-left: 2rem;
+  }
+#songs {
+  display: flex;
+  flex-direction: column;
+}
+
+#songs img,
+#overview img{
+  max-width: 100%;
+}
 }
